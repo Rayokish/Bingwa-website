@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingwa Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Bingwa Data</h1>
+        <label class="switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="container" id="content">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <div class="tab-bar">
+        <div class="tab-item active" data-tab="bundles">Bundles</div>
+        <div class="tab-item" data-tab="minutes">Minutes</div>
+        <div class="tab-item" data-tab="sms">SMS</div>
+        <div class="tab-item" data-tab="history">History</div>
+        <div class="tab-item" data-tab="about">About</div>
+    </div>
+
+    <!-- Modals -->
+    <div id="purchaseModal" class="modal-overlay" style="display: none;">
+        <div class="modal-container">
+            <h2 id="modalTitle"></h2>
+            <p id="modalSubtitle"></p>
+            <input type="tel" id="phoneReceive" placeholder="Phone to receive">
+            <input type="tel" id="phonePay" placeholder="M-Pesa phone">
+            <div class="button-group">
+                <button id="confirmPurchase" class="button primary-button">PURCHASE</button>
+                <button id="cancelPurchase" class="button secondary-button">CANCEL</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="responseModal" class="modal-overlay" style="display: none;">
+        <div class="modal-container">
+            <h2>Purchase Status</h2>
+            <p id="responseText"></p>
+            <button id="closeResponse" class="button secondary-button">CLOSE</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
